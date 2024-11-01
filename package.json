@@ -20,7 +20,9 @@
     "test:chrome": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e --browser chrome\"",
     "test:firefox": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e --browser firefox\"",
     "test:edge": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e --browser edge\"",
-    "test:safari": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e --browser webkit\""
+    "test:safari": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e --browser webkit\"",
+    "build_docker": "yarn build && docker build -t mchauge/mediamtx-connect:latest .",
+    "docker_push": "docker push mchauge/mediamtx-connect:latest"
   },
   "dependencies": {
     "@ffmpeg/core": "^0.12.4",

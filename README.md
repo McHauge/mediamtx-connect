@@ -7,14 +7,14 @@
   
   <strong>Leveraging the power of [MediaMTX](https://github.com/bluenviron/mediamtx) </strong>
 
-  ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bcanfield/mediamtx-connect/ci.yml?label=CI)
-  [![Docker Hub](https://img.shields.io/badge/bcanfield/mediamtx--connect-docker?label=docker&color=blue)](https://hub.docker.com/r/bcanfield/mediamtx-connect)
-  [![Github Release](https://img.shields.io/github/v/release/bcanfield/mediamtx-connect)](https://github.com/bcanfield/mediamtx-connect/releases)
+  ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mchauge/mediamtx-connect/ci.yml?label=CI)
+  [![Docker Hub](https://img.shields.io/badge/mchauge/mediamtx--connect-docker?label=docker&color=blue)](https://hub.docker.com/r/mchauge/mediamtx-connect)
+  [![Github Release](https://img.shields.io/github/v/release/mchauge/mediamtx-connect)](https://github.com/mchauge/mediamtx-connect/releases)
 </div>
 <br>
 
 
-https://github.com/bcanfield/mediamtx-connect/assets/12603953/ae1e3e0f-401e-4560-a373-b46ea5679870
+https://github.com/mchauge/mediamtx-connect/assets/12603953/ae1e3e0f-401e-4560-a373-b46ea5679870
 
 ## Usage
 
@@ -43,7 +43,7 @@ services:
       - 8889:8889
       - 9997:9997
   mediamtx-connect:
-    image: bcanfield/mediamtx-connect
+    image: mchauge/mediamtx-connect
     container_name: mediamtx-connect
     restart: unless-stopped
     volumes:
