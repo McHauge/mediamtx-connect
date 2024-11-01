@@ -25,6 +25,30 @@ export async function register() {
     }
 
     console.log({ config });
+
+    var updateConfig = false;
+    if (NODE_ENV === "production" && config.recordingsDirectory.startsWith("./")) {
+      config.recordingsDirectory = "/recordings"
+      updateConfig = true;
+    }
+    if (NODE_ENV === "production" && config.screenshotsDirectory.startsWith("./")) {
+      config.screenshotsDirectory = "/screenshots"
+      updateConfig = true;
+    }
+
+    if (updateConfig) {
+      console.log("Updating config to use absolute paths");
+      config = await prisma.config.update({
+        where: {
+          id: config.id,
+        },
+        data: {
+          recordingsDirectory: config.recordingsDirectory,
+          screenshotsDirectory: config.screenshotsDirectory,
+        },
+      });
+    }
+
     const recordingsDirectory = config.recordingsDirectory;
     const screenshotsDirectory = config.screenshotsDirectory;
 
